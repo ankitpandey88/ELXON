@@ -28,7 +28,7 @@ function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrollPosition > 0 ? "bg-[#002244]" : "bg-white"
+        scrollPosition > 0 ? "bg-gray-900" : "bg-white"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center py-3">
@@ -36,18 +36,18 @@ function Header() {
         <div className="flex items-center space-x-3">
           <Link to="/">
             <img
-              src="/image/logo1.jpeg"
+              src="/image/logo.png"
               alt="logo"
               className="w-30 h-14 bg-white p-2 rounded-2xl"
             />
           </Link>
-          <span
+          {/* <span
             className={`text-2xl font-bold transition-colors ${
               scrollPosition > 0 ? "text-white" : "text-black"
             }`}
           >
             ELXON
-          </span>
+          </span> */}
         </div>
 
         {/* Navigation and Utility Icons */}
@@ -61,7 +61,7 @@ function Header() {
               About 
             </Link>
             <Link to="/products" className={linkClasses}>
-              Our Products
+              Products
             </Link>
             <Link to="/contact-us" className={linkClasses}>
               Contact
@@ -111,7 +111,7 @@ function Header() {
               {[
                 { name: "Home", link: "/" },
                 { name: "About ", link: "/about" },
-                { name: "Services", link: "/services" },
+                { name: "Products", link: "/products" },
                 { name: "Contact", link: "/contact-us" },
               ].map((item) => (
                 <Link

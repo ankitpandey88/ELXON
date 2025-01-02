@@ -81,7 +81,7 @@ import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 
 function Footer() {
   return (
-    <footer className="bg-[#002244] text-white py-10">
+    <footer className="bg-gray-900 text-white py-10">
       <div className="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
         
         {/* Company Info Section */}
