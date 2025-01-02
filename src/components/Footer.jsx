@@ -98,7 +98,7 @@ function Footer() {
           </div>
           <div className="flex items-center space-x-2">
             <AiOutlinePhone className="text-2xl" />
-            <span className="text-lg">+91 98737 19245</span>
+            <span className="text-lg">+91 75185 88115</span>
           </div>
         </div>
       </div>
