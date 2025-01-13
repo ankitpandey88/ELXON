@@ -2,12 +2,28 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaSearch, FaUser } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaSearch,
+  FaUser,
+  FaShoppingCart,
+} from "react-icons/fa";
+import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 
 function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isCatalogueDropdownOpen, setCatalogueDropdownOpen] = useState(false);
+
+  const rotatingTexts = [
+    "Apply VIPUL coupon now and enjoy a fantastic 20% discount on your purchase!",
+    "Get free shipping on all orders over 1999rp shop more and save on delivery!",
+    "Hurry up and grab these amazing limited-time offers before they run out!",
+    "Shop now to discover incredible deals and save big on your favorite items!",
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +37,18 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const textChangeInterval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
+    }, 7000);
+
+    return () => clearInterval(textChangeInterval);
+  }, []);
+
   const linkClasses = `font-semibold transition-colors ${
-    scrollPosition > 0 ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"
+    scrollPosition > 0
+      ? "text-white hover:text-gray-300"
+      : "text-black hover:text-gray-700"
   }`;
 
   return (
@@ -31,8 +57,31 @@ function Header() {
         scrollPosition > 0 ? "bg-gray-900" : "bg-white"
       }`}
     >
+      {/* Contact and Rotating Text Section */}
+      <section className="bg-gray-700 py-2">
+        <div className="container mx-auto flex justify-between items-center">
+          {/* Rotating Text (Hidden on Mobile) */}
+          <div className="hidden sm:block text-center ml-32 text-sm font-semibold text-white flex-1">
+            {rotatingTexts[currentTextIndex]}
+          </div>
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-2 text-white">
+              <AiOutlineMail className="text-base" />
+              <span className="text-base">info@elxon.in</span>
+            </div>
+            <div className="flex items-center space-x-2 text-white">
+              <AiOutlinePhone className="text-base" />
+              <a href="tel:+917518588115" className="text-base">
+                +91 75185 88115
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Header */}
       <div className="container mx-auto flex justify-between items-center py-3">
-        {/* Logo and Company Name */}
+        {/* Logo */}
         <div className="flex items-center space-x-3">
           <Link to="/">
             <img
@@ -41,35 +90,46 @@ function Header() {
               className="w-30 h-14 bg-white p-2 rounded-2xl"
             />
           </Link>
-          {/* <span
-            className={`text-2xl font-bold transition-colors ${
-              scrollPosition > 0 ? "text-white" : "text-black"
-            }`}
-          >
-            ELXON
-          </span> */}
         </div>
 
-        {/* Navigation and Utility Icons */}
-        <div className="flex items-center space-x-6">
-          {/* Navigation Links */}
-          <nav className="hidden lg:flex space-x-8 text-base">
-            <Link to="/" className={linkClasses}>
-              Home
-            </Link>
-            <Link to="/about" className={linkClasses}>
-              About 
-            </Link>
-            <Link to="/products" className={linkClasses}>
-              Products
-            </Link>
-            <Link to="/contact-us" className={linkClasses}>
-              Contact
-            </Link>
-          </nav>
+        {/* Navigation Links (Visible in Web View) */}
+        <nav className="hidden lg:flex space-x-8 text-base">
+          <Link to="/" className={linkClasses}>
+            Home
+          </Link>
+          <Link to="/about" className={linkClasses}>
+            About
+          </Link>
+          <Link to="/products" className={linkClasses}>
+            Products
+          </Link>
+          <div
+            className="relative cursor-pointer"
+            onMouseEnter={() => setCatalogueDropdownOpen(true)}
+            onMouseLeave={() => setCatalogueDropdownOpen(false)}
+          >
+            <span className={linkClasses}>Catalogue</span>
+            {isCatalogueDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-md p-2 rounded">
+                <a
+                  href="/catalog/elxon-catalogue .pdf"
+                  download
+                  className="block px-4 py-2 text-black hover:bg-gray-100"
+                >
+                  Download Catalogue
+                </a>
+              </div>
+            )}
+          </div>
+          <Link to="/contact" className={linkClasses}>
+            Contact
+          </Link>
+        </nav>
 
-          {/* Search Bar */}
-          <div className="hidden lg:flex items-center bg-gray-200 rounded-full px-3 py-1">
+        {/* Icons and Search */}
+        <div className="flex items-center space-x-4">
+          {/* Search Bar (Visible in all views) */}
+          <div className="flex items-center bg-gray-200 rounded-full px-3 py-1">
             <input
               type="text"
               placeholder="Search..."
@@ -80,19 +140,18 @@ function Header() {
 
           {/* User Icon */}
           <div
-            className={`hidden lg:flex items-center space-x-2 cursor-pointer ${linkClasses}`}
+            className={`flex items-center space-x-2 cursor-pointer ${linkClasses}`}
             onClick={() => setLoginModalOpen(true)}
           >
             <FaUser className="w-6 h-6" />
-            {/* <span className="text-sm">Login</span> */}
           </div>
 
-          {/* Hamburger Menu for Mobile */}
+          {/* Hamburger Menu */}
           <button
             className="lg:hidden"
             onClick={() => setSidebarOpen(!sidebarOpen)}
           >
-            <FaBars className="w-8 h-8 text-black" />
+            <FaBars className={`w-8 h-8 text-black ${linkClasses}`} />
           </button>
         </div>
       </div>
@@ -110,17 +169,33 @@ function Header() {
             <nav className="mt-10 space-y-4">
               {[
                 { name: "Home", link: "/" },
-                { name: "About ", link: "/about" },
+                { name: "About", link: "/about" },
                 { name: "Products", link: "/products" },
-                { name: "Contact", link: "/contact-us" },
+                {
+                  name: "Catalogue",
+                  link: "",
+                  onClick: () => setCatalogueDropdownOpen(!isCatalogueDropdownOpen),
+                },
+                { name: "Contact", link: "/contact" },
               ].map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.link}
-                  className="block text-lg text-white hover:text-gray-400"
-                >
-                  {item.name}
-                </Link>
+                <div key={item.name}>
+                  <Link
+                    to={item.link}
+                    className="block text-lg text-white hover:text-gray-400"
+                    onClick={item.onClick}
+                  >
+                    {item.name}
+                  </Link>
+                  {item.name === "Catalogue" && isCatalogueDropdownOpen && (
+                    <a
+                      href="/catalog/elxon-catalogue .pdf"
+                      download
+                      className="block text-sm text-gray-300 hover:text-white pl-4"
+                    >
+                      Download Catalogue
+                    </a>
+                  )}
+                </div>
               ))}
             </nav>
           </div>
