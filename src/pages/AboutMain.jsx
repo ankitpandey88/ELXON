@@ -3,10 +3,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Footer from '../components/Footer';
 
 
-
-function AboutUs() {
+function AboutMain() {
   return (
    <div>
      <section className="py-20 bg-gray-900" id="about">
@@ -92,9 +92,9 @@ function AboutUs() {
         }
       `}</style>
     </section>
- 
+    <Footer/>
    </div>
   );
 }
 
-export default AboutUs;
+export default AboutMain;

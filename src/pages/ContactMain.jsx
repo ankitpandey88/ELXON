@@ -1,9 +1,9 @@
 
 
 import React from "react";
+import Footer from "../components/Footer";
 
-
-const Contact = () => {
+const ContactMain = () => {
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
@@ -106,9 +106,9 @@ const Contact = () => {
         </div>
       </div>
     </div>
-   
+    <Footer/>
     </div>
   );
 };
 
-export default Contact;
+export default ContactMain;
