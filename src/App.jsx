@@ -89,7 +89,7 @@ const App = () => {
 
       {/* WhatsApp Floating Icon */}
       <a
-        href="https://wa.me/8858484220"
+        href="https://wa.me/9873719245"
         target="_blank"
         rel="noopener noreferrer"
         style={{
