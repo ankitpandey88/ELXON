@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 
@@ -58,12 +59,12 @@ function AboutUs() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
           >
-            <a
-              href="#learn-more" // This could be an internal link or an external link
+            <Link
+             to = "/about"
               className="inline-block mt-4 px-8 py-3 bg-red-950 text-white text-lg font-semibold rounded-lg hover:bg-red-900 transition-colors"
             >
               Learn More
-            </a>
+            </Link>
           </motion.div>
         </div>
 
