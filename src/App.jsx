@@ -57,6 +57,8 @@ import Popup from './pages/PopUp';
 import ContactMain from './pages/ContactMain';
 import AboutMain from './pages/AboutMain';
 import { FaWhatsapp } from 'react-icons/fa'; // Import WhatsApp icon
+import ShowCase from './pages/ShowCase';
+import ProductDetail from './pages/ProductShowcase';
 
 const App = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -77,15 +79,17 @@ const App = () => {
     <div>
       <Header />
       <Routes>
+      {/* <Route path="/" element={<ShowCase />} /> */}
+      <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/" element={<HeroSection />} />
         <Route path="/contact" element={<ContactMain />} />
         <Route path="/products" element={<Product />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+      
         <Route path="/about" element={<AboutMain />} />
       </Routes>
 
       {/* Uncomment if you have the Popup component */}
-      {/* {showPopup && <Popup onClose={closePopup} />} */}
+      {showPopup && <Popup onClose={closePopup} />}
 
       {/* WhatsApp Floating Icon */}
       <a

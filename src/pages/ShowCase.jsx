@@ -97,50 +97,58 @@
 
 // export default ShowCase;
 
-
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ShowCase = () => {
+  const navigate = useNavigate();
+
   const items = [
     {
+      id: 1,
       image: "/image/show1.jpg",
       alt: "Electric Appliance 1",
       title: "3D and Circular Light",
       description: "Upgrade your viewing experience with a 4K Smart LED TV.",
+      price: "1499",
     },
     {
+      id: 2,
       image: "/image/show2.avif",
       alt: "Electric Appliance 2",
       title: "3D Universe Crystal Ball Night",
       description: "Desidiya Unique 3D Universe Crystal Ball Night.",
-      buttonText: "Shop Now",
+      price: "1799",
     },
     {
+      id: 3,
       image: "/image/show3.jpg",
       alt: "Electric Appliance 3",
       title: "Diamond Hanging Pendant Light",
-      description:
-        "Groeien 3 Lights Cluster Chandelier Diamond Hanging Pendant Light With Braided Cord",
+      description: "Groeien 3 Lights Cluster Chandelier Diamond Hanging Pendant Light With Braided Cord",
+      price: "1999",
     },
     {
+      id: 4,
       image: "/image/show4.jpg",
       alt: "Electric Appliance 4",
       title: "Floret Wall light",
-      description:
-        "The Floret Wall Light boasts a contemporary design that adds a touch of elegance to any room",
+      description: "The Floret Wall Light boasts a contemporary design that adds a touch of elegance to any room",
+      price: "999",
     },
   ];
 
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <>
-      {/* Title Section */}
-      <div className="text-center bg-gray-900 py-4">
-        <h1 className="text-5xl font-bold glow-text">Discover Unique Lighting and Decor Options</h1>
-      </div>
-
-      {/* Main Content */}
       <div className="px-2 pb-1 flex flex-col md:flex-row gap-x-2">
-        <div className="relative h-96 w-full md:w-[70%]">
+        <div
+          className="relative h-96 w-full md:w-[70%] cursor-pointer"
+          onClick={() => handleProductClick(items[0].id)}
+        >
           <div
             className="relative h-full w-full bg-cover bg-center shadow-md flex flex-col justify-between"
             style={{ backgroundImage: `url(${items[0].image})` }}
@@ -151,7 +159,10 @@ const ShowCase = () => {
             </div>
           </div>
         </div>
-        <div className="relative h-96 w-full md:w-[30%]">
+        <div
+          className="relative h-96 w-full md:w-[30%] cursor-pointer"
+          onClick={() => handleProductClick(items[1].id)}
+        >
           <img
             src={items[1].image}
             alt={items[1].alt}
@@ -163,9 +174,11 @@ const ShowCase = () => {
           </div>
         </div>
       </div>
-
       <div className="px-2 pb-1 pt-1 flex flex-col md:flex-row gap-x-2">
-        <div className="relative h-96 w-full md:w-[30%]">
+        <div
+          className="relative h-96 w-full md:w-[30%] cursor-pointer"
+          onClick={() => handleProductClick(items[2].id)}
+        >
           <img
             src={items[2].image}
             alt={items[2].alt}
@@ -176,8 +189,10 @@ const ShowCase = () => {
             <p className="mt-2">{items[2].description}</p>
           </div>
         </div>
-
-        <div className="relative h-96 w-full md:w-[70%]">
+        <div
+          className="relative h-96 w-full md:w-[70%] cursor-pointer"
+          onClick={() => handleProductClick(items[3].id)}
+        >
           <div
             className="relative h-full w-full bg-cover bg-center shadow-md flex flex-col justify-between"
             style={{ backgroundImage: `url(${items[3].image})` }}
@@ -189,18 +204,9 @@ const ShowCase = () => {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        .glow-text {
-          color: white;
-          text-shadow: 
-            0px 0px 10px red,
-            0px 0px 20px red,
-            0px 0px 40px red,
-            0px 0px 80px red;
-        }
-      `}</style>
     </>
   );
 };
 
 export default ShowCase;
+      
