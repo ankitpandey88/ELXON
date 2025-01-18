@@ -50,7 +50,7 @@ const ProductDetail = () => {
 
   const handleBuyNow = () => {
     const message = `Hello! I am interested in purchasing the following product:\n\n*${product.title}*\nPrice: ${product.price}\nDescription: ${product.description}`;
-    const whatsappUrl = `https://wa.me/8858484220?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/918858484220?text=${encodeURIComponent(message)}`;  // +91 is India's country code
     window.open(whatsappUrl, "_blank");
   };
 
