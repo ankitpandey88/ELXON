@@ -98,37 +98,69 @@ const ProductPage = () => {
     navigate(`/productlist/${id}`);
   };
   return (
+    // <div>
+    //   <div className="bg-gray-900 min-h-screen p-6">
+    //   <h1 className="text-4xl font-bold text-white text-center mb-8">Our Product Categories</h1>
+    //   {categories.map((category, index) => (
+    //     <div key={index} className="mb-8">
+    //       <h2 className="text-2xl font-bold text-center text-white mb-4">{category.name}</h2>
+    //       <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    //         {category.products.map((product) => (
+    //           <div key={product.id} className="bg-white p-4 rounded-lg shadow-lg">
+    //             <img
+    //               src={product.image}
+    //               alt={product.name}
+    //               className="w-full h-48 object-cover rounded-md mb-4"
+    //             />
+    //             <h3 className="text-lg font-semibold text-gray-800 truncate">{product.name}</h3>
+                
+    //             <p className="text-sm text-gray-600 truncate">{product.description}</p>
+    //             <Link
+    //               to={`/productlist/${product.id}`}
+    //               className="text-blue-500 hover:underline mt-2 block"
+    //             >
+    //               View Details
+    //             </Link>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   ))}
+    // </div>
+    // <Footer/>
+    // </div>
     <div>
-      <div className="bg-gray-900 min-h-screen p-6">
-      <h1 className="text-4xl font-bold text-white text-center mb-8">Our Product Categories</h1>
-      {categories.map((category, index) => (
-        <div key={index} className="mb-8">
-          <h2 className="text-2xl font-bold text-center text-white mb-4">{category.name}</h2>
-          <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {category.products.map((product) => (
-              <div key={product.id} className="bg-white p-4 rounded-lg shadow-lg">
+  <div className="bg-gray-900 min-h-screen p-6">
+    <h1 className="text-4xl font-bold text-white text-center mb-8">Our Product Categories</h1>
+    {categories.map((category, index) => (
+      <div key={index} className="mb-8">
+        <h2 className="text-2xl font-bold text-center text-white mb-4">{category.name}</h2>
+        <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {category.products.map((product) => (
+            <Link
+              key={product.id}
+              to={`/productlist/${product.id}`}
+              className="bg-white p-4 rounded-lg shadow-lg block"
+            >
+              <div>
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-48 object-cover rounded-md mb-4"
                 />
                 <h3 className="text-lg font-semibold text-gray-800 truncate">{product.name}</h3>
-                
                 <p className="text-sm text-gray-600 truncate">{product.description}</p>
-                <Link
-                  to={`/productlist/${product.id}`}
-                  className="text-blue-500 hover:underline mt-2 block"
-                >
-                  View Details
-                </Link>
+                <p className="text-blue-500 hover:underline mt-2 block">View Details</p>
               </div>
-            ))}
-          </div>
+            </Link>
+          ))}
         </div>
-      ))}
-    </div>
-    <Footer/>
-    </div>
+      </div>
+    ))}
+  </div>
+  <Footer />
+</div>
+
   );
 };
 

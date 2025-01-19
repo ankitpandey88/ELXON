@@ -5,6 +5,7 @@ import AboutUs from '../pages/About'
 import ProductCategories from '../pages/LandingPageProduct'
 import ShowCase from '../pages/ShowCase'
 import Contact from '../pages/Contact'
+import SaveEnergyComponent from '../pages/SaveEnergy'
 
 
 const HeroSection = () => {
@@ -14,6 +15,8 @@ const HeroSection = () => {
         <AboutUs/>
         <ProductCategories/>
         <ShowCase/>
+        <SaveEnergyComponent/>
+        
         <Contact/>
         <Footer/>
 

@@ -126,7 +126,7 @@ const App = () => {
       </Routes>
 
       {/* Popup (if required) */}
-      {showPopup && <Popup onClose={closePopup} />}
+      {/* {showPopup && <Popup onClose={closePopup} />} */}
 
       {/* Floating Chat Us Button */}
       <a

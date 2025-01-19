@@ -157,7 +157,7 @@ function Header() {
       </div>
 
       {/* Sidebar for Mobile */}
-      {sidebarOpen && (
+      {/* {sidebarOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50">
           <div className="w-64 h-full bg-gray-800 p-6">
             <button
@@ -200,7 +200,58 @@ function Header() {
             </nav>
           </div>
         </div>
-      )}
+      )} */}
+
+      {/* Sidebar for Mobile */}
+{sidebarOpen && (
+  <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50">
+    <div className="w-64 h-full bg-gray-800 p-6">
+      <button
+        className="absolute top-4 right-4 text-white"
+        onClick={() => setSidebarOpen(false)}
+      >
+        <FaTimes className="w-6 h-6" />
+      </button>
+      <nav className="mt-10 space-y-4">
+        {[
+          { name: "Home", link: "/" },
+          { name: "About", link: "/about" },
+          { name: "Products", link: "/products" },
+          {
+            name: "Catalogue",
+            link: "",
+            onClick: () => setCatalogueDropdownOpen(!isCatalogueDropdownOpen),
+          },
+          { name: "Contact", link: "/contact" },
+        ].map((item) => (
+          <div key={item.name}>
+            <Link
+              to={item.link}
+              className="block text-lg text-white hover:text-gray-400"
+              onClick={() => {
+                if (item.onClick) item.onClick();
+                setSidebarOpen(false); // Close the sidebar after clicking
+              }}
+            >
+              {item.name}
+            </Link>
+            {item.name === "Catalogue" && isCatalogueDropdownOpen && (
+              <a
+                href="/catalog/elxon-catalogue .pdf"
+                download
+                className="block text-sm text-gray-300 hover:text-white pl-4"
+                onClick={() => setSidebarOpen(false)} // Close the sidebar after clicking
+              >
+                Download Catalogue
+              </a>
+            )}
+          </div>
+        ))}
+      </nav>
+    </div>
+  </div>
+)}
+
 
       {/* Login/Register Modal */}
       {isLoginModalOpen && (

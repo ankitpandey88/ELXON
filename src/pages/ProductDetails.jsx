@@ -3,6 +3,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import Footer from "../components/Footer";
 
 const ProductDetailMain = () => {
   const { id } = useParams();
@@ -558,7 +559,8 @@ const ProductDetailMain = () => {
   };
 
   return (
-    <div>
+   <div>
+      <div>
       <div className="bg-black text-white min-h-screen flex flex-col items-center p-6">
         {/* Back Button */}
         <div className="w-full flex justify-between items-center mb-4">
@@ -644,6 +646,8 @@ const ProductDetailMain = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+   </div>
   );
 };
 
