@@ -130,7 +130,7 @@ const App = () => {
 
       {/* Floating Chat Us Button */}
       <a
-        href="https://wa.me/9873719245"
+        href="https://wa.me/7518588115"
         target="_blank"
         rel="noopener noreferrer"
         style={{

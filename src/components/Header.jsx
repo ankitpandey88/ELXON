@@ -19,7 +19,7 @@ function Header() {
   const [isCatalogueDropdownOpen, setCatalogueDropdownOpen] = useState(false);
 
   const rotatingTexts = [
-    "Apply VIPUL coupon now and enjoy a fantastic 20% discount on your purchase!",
+    "Apply ELXON coupon now and enjoy a fantastic 20% discount on your purchase!",
     "Get free shipping on all orders over 1999rp shop more and save on delivery!",
     "Hurry up and grab these amazing limited-time offers before they run out!",
     "Shop now to discover incredible deals and save big on your favorite items!",
