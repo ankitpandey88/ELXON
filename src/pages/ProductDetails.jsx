@@ -17,7 +17,7 @@ const ProductDetailMain = () => {
       image: "/product/motion sensor bulb 9 Watt.jpeg",
       title: "Motion Sensor Bulb",
       description: "A motion sensor bulb automatically lights up when detecting movement.",
-      price: "₹1200",
+      price: "₹299",
       rating: 4.2,
       specifications: {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -33,7 +33,7 @@ const ProductDetailMain = () => {
       image: "/product/motion sensor panel light 12 watt.jpeg",
       title: "Motion Sensor Panel Light",
       description: "A motion sensor panel light activates upon detecting nearby movement.",
-      price: "₹1500",
+      price: "₹699",
       rating: 4.5,
       specifications:   {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -49,7 +49,7 @@ const ProductDetailMain = () => {
       image: "/product/motion sensor tubelight 20 watt.jpeg",
       title: "Motion Sensor Tubelight",
       description: "A motion sensor tube light illuminates when motion is detected.",
-      price: "₹1000",
+      price: "₹599",
       rating: 4.1,
       specifications:   {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -65,7 +65,7 @@ const ProductDetailMain = () => {
       image: "/product/motion sensor street light.jpeg",
       title: "Motion Sensor Street Light",
       description: "A motion sensor street light activates upon detecting movement nearby.",
-      price: "₹800",
+      price: "₹1999",
       rating: 4.0,
       specifications:   {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -145,7 +145,7 @@ const ProductDetailMain = () => {
       image: "/product/PIR motion sensors.jpeg",
       title: "PIR Motion Sensor Ceiling Mount",
       description: "Detects motion using infrared technology, ideal for automatic lighting, energy efficiency, and enhanced security.",
-      price: "₹900",
+      price: "₹499",
       rating: 4.3,
       specifications:   {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -162,7 +162,7 @@ const ProductDetailMain = () => {
       image: "/product/microwave motion sensor.jpeg",
       title: "Microwave Motion Sensor Ceiling Mount",
       description: "Uses radar technology for motion detection, offering precise automatic lighting control and enhanced security.",
-      price: "₹1100",
+      price: "₹599",
       rating: 4.4,
       specifications:  {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -179,7 +179,7 @@ const ProductDetailMain = () => {
       image: "/product/Mini PIR sensor.jpeg",
       title: "Mini PIR Motion Sensor",
       description: "Compact infrared detector for efficient motion-based automatic lighting control and enhanced energy savings.",
-      price: "₹1300",
+      price: "₹299",
       rating: 4.5,
       specifications:   {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -213,7 +213,7 @@ const ProductDetailMain = () => {
       image: "/product/smart energy meter.jpeg",
       title: "Smart Energy Meter (6 Parameter)",
       description: "Monitors voltage, current, power, energy, frequency, and power factor, ensuring efficient energy management.",
-      price: "₹900",
+      price: "₹1699",
       rating: 4.6,
       specifications:  {
         voltageMeasuringRange: "40V - 300V AC, 50HZ",
@@ -229,7 +229,7 @@ const ProductDetailMain = () => {
       image: "/product/smart energy meter plug in.jpeg",
       title: "Smart Energy Meter (Plug-in Type))",
       description: "easily monitors energy usage, providing real-time insights into power consumption for efficient energy management..",
-      price: "₹900",
+      price: "₹999",
       rating: 4.6,
       specifications:   {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -243,7 +243,7 @@ const ProductDetailMain = () => {
       image: "/product/Voltage Protector.jpeg",
       title: "The Voltage Protector (1 Phase)",
       description: "safeguards electrical appliances by preventing damage from voltage fluctuations, ensuring stable and reliable performance.",
-      price: "₹900",
+      price: "₹999",
       rating: 4.6,
       specifications:   {
         voltageRange: "220-240 V AC, 50HZ",
@@ -260,7 +260,7 @@ const ProductDetailMain = () => {
       image: "/product/digital timer switch.jpeg",
       title: "Digital Timer Switch",
       description: "allows precise scheduling of electrical devices, enhancing convenience and energy efficiency by automating on/off functions.",
-      price: "₹900",
+      price: "₹699",
       rating: 4.6,
       specifications:   {
         inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -279,7 +279,7 @@ const ProductDetailMain = () => {
     image: "/product/Day night sensor.jpeg",
     title: "Day Night Sensor (Basic)",
     description: "Automatically controls lighting based on ambient light levels, turning lights on at dusk and off at dawn.",
-    price: "₹1499",
+    price: "₹199",
     rating: 4.3,
     specifications: {
       inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -295,7 +295,7 @@ const ProductDetailMain = () => {
     image: "/image/DAY NIGHT SENSOR (ADJUSTABLE).jpg",
     title: "Day Night Sensor (Adjustable)",
     description: "Detects ambient light levels and automatically controls lighting, with customizable settings for dusk and dawn.",
-    price: "₹1199",
+    price: "₹299",
     rating: 4.4,
     specifications: {
       inputSupplyVoltage: "220-240 V AC, 50HZ",
@@ -311,7 +311,7 @@ const ProductDetailMain = () => {
     image: "/image/DAY NIGHT SENSOR (IP65).jpg",
     title: "Day Night Sensor (IP65)",
     description: "Offers weatherproof protection, automatically controlling lighting based on light levels, ideal for outdoor environments.",
-    price: "₹1790",
+    price: "₹149",
     rating: 4.5,
     specifications: {
       inputSupplyVoltage: "220-240 V AC, 50HZ",
